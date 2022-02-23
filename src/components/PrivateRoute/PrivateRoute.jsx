@@ -10,6 +10,16 @@ export default function PrivateRoute({ children, ...rest }) {
   // TODO: Use the user in context to determine whether to redirect to /login
   // const { user } = useUser();
 
-  return <Route {...rest} render={({ location }) => {user.email ? children : <Redirect to={{ pathname: '/login', state: { from: location } }} />}
-} />;
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        user.email ? (
+          children
+        ) : (
+          <Redirect to={{ pathname: '/login', state: { from: location } }} />
+        )
+      }
+    />
+  );
 }
