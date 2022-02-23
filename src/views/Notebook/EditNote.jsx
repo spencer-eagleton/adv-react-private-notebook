@@ -19,7 +19,7 @@ export default function EditNote() {
     if (notes.error) {
       setMessage(notes.error);
     } else {
-      setMessage('Note updated successfully!');
+      setMessage('Note updated successfully!!');
       setTimeout(() => {
         setMessage('');
       }, 3000);
